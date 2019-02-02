@@ -15,7 +15,7 @@ class HorizontalDivision extends Component
 
 
         $this->addCSSFile(
-           'theme/PlanckBoard/source/class/View/Component/HorizontalDivision/style.css'
+           'theme/planck-theme-planck-board/source/class/View/Component/HorizontalDivision/style.css'
         );
 
 
@@ -28,7 +28,7 @@ class HorizontalDivision extends Component
 
 
         $html = '
-            <div class="horizontal-division plk-component">
+            <div class="plk-component horizontal-division">
                 <div class="top">
     
                     top

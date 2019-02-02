@@ -1,3 +1,7 @@
-.horizontal-division {
+.plk-component.horizontal-division .top {
+    border-bottom: solid 1px #FFF;
+}
 
+.plk-component.horizontal-division .middle {
+    border-bottom: solid 1px #FFF;
 }

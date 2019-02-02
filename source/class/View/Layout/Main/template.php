@@ -18,8 +18,8 @@
 
 
 
-    <link href="theme/PlanckBoard/asset/css/dashboard.css" rel="stylesheet">
-    <link href="theme/PlanckBoard/asset/css/material-form.css" rel="stylesheet">
+    <link href="theme/planck-theme-planck-board/asset/css/dashboard.css" rel="stylesheet">
+    <link href="theme/planck-theme-planck-board/asset/css/material-form.css" rel="stylesheet">
 
 </head>
 
@@ -130,7 +130,7 @@
 
 
 
-<script type="text/javascript" src="theme/PlanckBoard/javascript/bootstrap.js"></script>
+<script type="text/javascript" src="theme/planck-theme-planck-board/javascript/bootstrap.js"></script>
 
 
 
