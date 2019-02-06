@@ -13,13 +13,14 @@
 
 
 
-    <link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="vendor/fontawesome-free/css/all.css" rel="stylesheet">
+
+        <link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="vendor/fontawesome-free/css/all.css" rel="stylesheet">
 
 
-
-    <link href="theme/planck-theme-planck-board/asset/css/dashboard.css" rel="stylesheet">
-    <link href="theme/planck-theme-planck-board/asset/css/material-form.css" rel="stylesheet">
+        <link href="theme/planck-theme-planck-board/asset/css/grid.css" rel="stylesheet">
+        <link href="theme/planck-theme-planck-board/asset/css/dashboard.css" rel="stylesheet">
+        <link href="theme/planck-theme-planck-board/asset/css/material-form.css" rel="stylesheet">
 
 </head>
 
@@ -73,14 +74,17 @@
 
 <script src="vendor/jquery/dist/jquery.js"></script>
 
+<script src="vendor/jquery-ui/jquery-ui.js"></script>
+<link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.css"/>
+<link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.theme.css"/>
+
+
 <!-- Popper js -->
 <script src="vendor/tether/dist/js/tether.js"></script>
 <script src="vendor/popper.min.js"></script>
 <!-- Bootstrap-4 js -->
 <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Menu Toggle Script -->
-
-
 
 <!--
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

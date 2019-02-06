@@ -7,6 +7,7 @@ body {
 
 }
 
+
 #wrapper {
     padding-left: 0;
     height: 100%;
@@ -46,7 +47,8 @@ body {
     height:calc(100% - 60px);
 
     position: absolute;
-    padding: 15px;
+
+    /*padding: 15px;*/
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -70,7 +72,7 @@ body {
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 150px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -117,16 +119,16 @@ body {
         padding-left: 0;
     }
     #wrapper.toggled {
-        padding-left: 250px;
+        padding-left: 150px;
     }
     #sidebar-wrapper {
         width: 0;
     }
     #wrapper.toggled #sidebar-wrapper {
-        width: 250px;
+        width: 150px;
     }
     #page-content-wrapper {
-        padding: 20px;
+        /*padding: 20px;*/
         position: relative;
     }
     #wrapper.toggled #page-content-wrapper {
