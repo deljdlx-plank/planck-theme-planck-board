@@ -3,7 +3,7 @@
 namespace Planck\Theme\PlanckBoard\View\Layout;
 
 
-use Planck\Application;
+use Planck\Application\Application;
 
 class LandingPage extends \Planck\View\Layout
 {

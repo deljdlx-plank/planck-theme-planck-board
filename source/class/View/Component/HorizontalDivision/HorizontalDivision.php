@@ -3,7 +3,7 @@
 namespace Planck\Theme\PlanckBoard\View\Component;
 
 
-use Planck\Application;
+use Planck\Application\Application;
 use Planck\View\Component;
 
 class HorizontalDivision extends Component

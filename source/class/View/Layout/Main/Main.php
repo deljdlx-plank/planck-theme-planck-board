@@ -3,7 +3,7 @@
 namespace Planck\Theme\PlanckBoard\View\Layout;
 
 
-use Planck\Application;
+use Planck\Application\Application;
 use Planck\Extension\FrontVendor\Package\Bootstrap;
 use Planck\Extension\FrontVendor\Package\FontAwesome;
 use Planck\Extension\FrontVendor\Package\Planck;
@@ -29,7 +29,6 @@ class Main extends \Planck\View\Layout
         $this->addFrontPackage(
             new FontAwesome()
         );
-
 
 
         $html = $this->obInclude(__DIR__.'/template.php');
@@ -83,7 +82,7 @@ class Main extends \Planck\View\Layout
         );
 
         $this->setMainContent($this->application->getOutput());
-        $this->addResourcesFromResponses($this->application->getResponses());
+
 
 
         parent::compile();
