@@ -13,8 +13,14 @@
 
 
         <link href="theme/planck-theme-planck-board/asset/css/grid.css" rel="stylesheet">
-        <link href="theme/planck-theme-planck-board/asset/css/dashboard.css" rel="stylesheet">
+        <link href="theme/planck-theme-planck-board/asset/css/component.css" rel="stylesheet">
+
+
+
         <link href="theme/planck-theme-planck-board/asset/css/material-form.css" rel="stylesheet">
+
+
+        <link href="theme/planck-theme-planck-board/asset/css/layout.css" rel="stylesheet">
 
 </head>
 

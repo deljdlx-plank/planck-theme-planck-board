@@ -70,6 +70,8 @@ class Main extends \Planck\View\Layout
 
 
 
+
+
         $this->getComponent('#sidebar-wrapper')->find('.top')->html(
             '<div><ul>'.
             '<li><a href="'.$logoutURL.'">Déconnexion</a></li>'.

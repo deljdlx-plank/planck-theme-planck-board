@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-
+    color: var(--color-heavy);
 }
 
 
@@ -12,9 +12,6 @@ body {
     padding-left: 0;
     height: 100%;
 
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
@@ -30,10 +27,9 @@ body {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
+    background: var(--background-heavy);
+
+
     transition: all 0.5s ease;
 }
 
