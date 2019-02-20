@@ -43,7 +43,7 @@
 
                 <input type="password" class="material0" placeholder="password" name="password"/>
 
-                <button>Login</button>
+                <button type="submit">Login</button>
             </form>
 
 
