@@ -68,6 +68,9 @@ class Main extends \Planck\View\Layout
             'Image', 'Main', 'list'
         );
 
+        $statusURL = $this->application->getExtension(\Planck\Extension\Content::class)->buildURL(
+            'Status', 'Main', 'index'
+        );
 
 
 
@@ -77,11 +80,20 @@ class Main extends \Planck\View\Layout
             '<li><a href="'.$logoutURL.'">Déconnexion</a></li>'.
             '<li><a href="'.$articleURL.'">Articles</a></li>'.
             '<li><a href="'.$imageURL.'">Images</a></li>'.
+            '<li><a href="'.$statusURL.'">Status</a></li>'.
+
             '<li><a href="?/tags">Tags</a></li>'.
-
-
             '</ul></div>'
         );
+
+        $adminArticleURL = '?/@extension/planck-extension-entity_editor/entity/main[manage]&entity=Planck\Extension\Content\Model\Entity\Article';
+        $this->getComponent('#sidebar-wrapper')->find('.bottom')->html(
+            '<div><ul>'.
+                '<li><a href="'.$adminArticleURL.'">Admin article</a></li>'.
+            '</ul></div>'
+        );
+
+
 
         $this->setMainContent($this->application->getOutput());
 
