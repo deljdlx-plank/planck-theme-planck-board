@@ -17,18 +17,6 @@ class Main extends \Planck\View\Layout
         parent::__construct($application);
 
 
-        $this->addFrontPackage(
-            new Bootstrap()
-        );
-
-        $this->addFrontPackage(
-            new Planck()
-        );
-
-
-        $this->addFrontPackage(
-            new FontAwesome()
-        );
 
 
         $html = $this->obInclude(__DIR__.'/template.php');
