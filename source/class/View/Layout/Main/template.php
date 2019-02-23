@@ -62,29 +62,10 @@
 
 
 
-<!-- Popper js -->
-<!--
-<script src="vendor/tether/dist/js/tether.js"></script>
-<script src="vendor/popper.min.js"></script>
-//-->
-
-<!-- Menu Toggle Script -->
-
-<!--
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-//-->
-
-
-
 
 
 
 <script id="phi-html-body-end"></script>
-
-
-<!--
-<script type="text/javascript" src="vendor/planck-front/source/FileUploader.js"></script>
-//-->
 
 
 
@@ -92,12 +73,6 @@
 
 
 <script src="?/tool/i18n/api/get-all-packages&callback=initializeI18N"></script>
-
-<!--
-<script type="text/javascript" src="theme/planck-theme-planck-board/javascript/package.js"></script>
-//-->
-
-
 <script type="text/javascript" src="theme/planck-theme-planck-board/asset/javascript/bootstrap.js"></script>
 
 
