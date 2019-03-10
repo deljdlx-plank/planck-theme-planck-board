@@ -13,6 +13,16 @@ class PlanckBoard extends Theme
         parent::__construct();
     }
 
+    public function getJavascriptURLRoot()
+    {
+        return 'theme/planck-theme-planck-board/asset/javascript';
+    }
+
+    public function getCSSURLRoot()
+    {
+        return 'theme/planck-theme-planck-board/asset/css';
+    }
+
 
 }
 

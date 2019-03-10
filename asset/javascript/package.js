@@ -361,6 +361,20 @@ Planck.Extension.ViewComponent.RemoteComponentLoader = function(componentName)
 
 };
 
+Planck.Extension.ViewComponent.RemoteComponentLoader.packageDescriptorLoaded = false;
+Planck.Extension.ViewComponent.RemoteComponentLoader.loadedAssets = {};
+
+
+
+Planck.Extension.ViewComponent.RemoteComponentLoader.setLoadedAssets = function(assets)
+{
+    Planck.Extension.ViewComponent.RemoteComponentLoader.loadedAssets = assets;
+};
+
+
+
+
+
 
 Planck.Extension.ViewComponent.RemoteComponentLoader.prototype.addData = function(key, value)
 {
@@ -377,6 +391,43 @@ Planck.Extension.ViewComponent.RemoteComponentLoader.prototype.addMethodCall = f
 
 
 Planck.Extension.ViewComponent.RemoteComponentLoader.prototype.load = function(callback)
+{
+
+    if(!Planck.Extension.ViewComponent.RemoteComponentLoader.packageDescriptorLoaded) {
+        this.loadPackageDescriptor(function(callback) {
+            this.loadComponent(callback);
+        }.bind(this));
+    }
+    else {
+        this.loadComponent(callback);
+    }
+};
+
+Planck.Extension.ViewComponent.RemoteComponentLoader.prototype.loadPackageDescriptor = function(callback)
+{
+
+    var url = '?/@extension/planck-extension-view_component/RemoteRendering/api[get-package]';
+    var data = {
+    };
+    Planck.ajax({
+        url: url,
+        method: 'get',
+        data: data,
+        success: function(response) {
+            Planck.Extension.ViewComponent.RemoteComponentLoader.loadedAssets = response;
+            Planck.Extension.ViewComponent.RemoteComponentLoader.packageDescriptorLoaded = true;
+
+
+            this.loadComponent(callback());
+        }.bind(this)
+    });
+
+
+};
+
+
+
+Planck.Extension.ViewComponent.RemoteComponentLoader.prototype.loadComponent = function(callback)
 {
 
     var url = this.serviceURL;
@@ -400,9 +451,24 @@ Planck.Extension.ViewComponent.RemoteComponentLoader.prototype.load = function(c
 
             descriptor.setHTML(response.html);
             descriptor.setCSS(response.css);
-            descriptor.setJavascripts(response.javascripts);
+
+
+            var javascriptToLoad = [];
+
+            for(var i = 0 ; i<response.javascripts.length; i++) {
+
+
+                var javascript = response.javascripts[i];
+
+                if(!isset(Planck.Extension.ViewComponent.RemoteComponentLoader.loadedAssets.javascripts[javascript])) {
+                    javascriptToLoad.push(javascript);
+                }
+
+            }
+            descriptor.setJavascripts(javascriptToLoad);
 
             descriptor.loadResources(function() {
+                console.log(callback);
                 if(callback) {
                     callback(descriptor);
                 }
@@ -410,12 +476,7 @@ Planck.Extension.ViewComponent.RemoteComponentLoader.prototype.load = function(c
 
         }.bind(this)
     });
-
 };
-
-
-
-
 
 
 
@@ -1106,14 +1167,17 @@ Planck.Extension.EntityEditor.Module.Entity.Controller.EntityManager.prototype.i
 {
 
     this.entityList = new Planck.Extension.EntityEditor.View.Component.EntityList(this.$entityListContainer);
+
     this.entityList.on('itemClick', function(entityDescriptor) {
         this.loadEditorByEntityDescriptor(entityDescriptor);
+
+        //this.renderEntityEditor();
 
     }.bind(this));
 
 
     this.entityList.load();
-    this.renderEntityEditor();
+
 
 };
 
@@ -1121,9 +1185,9 @@ Planck.Extension.EntityEditor.Module.Entity.Controller.EntityManager.prototype.l
 {
 
 
-    var entityEditor = new Planck.Extension.EntityEditor.View.Component.EntityEditor(this.$entityEditorContainer);
-    entityEditor.setEntity(descriptor.entity);
-    entityEditor.load();
+    this.entityEditor = new Planck.Extension.EntityEditor.View.Component.EntityEditor(this.$entityEditorContainer);
+    this.entityEditor.setEntity(descriptor.entity);
+    this.entityEditor.load();
 
 };
 
